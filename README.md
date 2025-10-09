@@ -1,7 +1,6 @@
 #docker-python-app
 
-Simple "hello" flask-based web app
-
+https://hub.docker.com/r/justudin/my-python-app
 
 
 ###🧩 Step 1: Create a simple Python app
@@ -176,7 +175,7 @@ This maps **port 5000** on your computer to **port 5000** inside the container.
 
 Open your browser and visit:
 
-👉 [http://localhost:5000](http://localhost:5000)
+👉 http://localhost:5000
 
 
 
@@ -228,7 +227,7 @@ docker rm <container_id>
 
 
 
-If you don’t have one yet, go to 👉 [https://hub.docker.com](https://hub.docker.com)
+If you don’t have one yet, go to 👉 https://hub.docker.com
 
 Create an account and note your **username**.
 
@@ -356,7 +355,7 @@ docker run -d -p 5000:5000 johndoe/my-python-app
 
 Then visit:
 
-[http://localhost:5000](http://localhost:5000)
+http://localhost:5000
 
 🎉 Your app will run exactly as before — no setup required.
 
