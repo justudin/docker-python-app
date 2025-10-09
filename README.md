@@ -1,28 +1,28 @@
-# docker-python-app
+#docker-python-app
 
 Simple "hello" flask-based web app
 
 
 
-\### 🧩 Step 1: Create a simple Python app
+###🧩 Step 1: Create a simple Python app
 
 
 
-1\. Create a new folder, e.g. `docker-python-app`
+1. Create a new folder, e.g. `docker-python-app`
 
-2\. Inside it, create a file named \*\*`app.py`\*\* with this code:
+2. Inside it, create a file named **`app.py`** with this code:
 
 
 
 ```python
 
-\# app.py
+#app.py
 
 from flask import Flask
 
 
 
-app = Flask(\_\_name\_\_)
+app = Flask(__name__)
 
 
 
@@ -34,7 +34,7 @@ def hello():
 
 
 
-if \_\_name\_\_ == '\_\_main\_\_':
+if __name__ == '__main__':
 
 &nbsp;   app.run(host='0.0.0.0', port=5000)
 
@@ -42,7 +42,7 @@ if \_\_name\_\_ == '\_\_main\_\_':
 
 
 
-This uses \*\*Flask\*\*, a lightweight Python web framework.
+This uses **Flask**, a lightweight Python web framework.
 
 
 
@@ -50,11 +50,11 @@ This uses \*\*Flask\*\*, a lightweight Python web framework.
 
 
 
-\### ⚙️ Step 2: Create a `requirements.txt` file
+###⚙️ Step 2: Create a `requirements.txt` file
 
 
 
-In the same folder, create a file called \*\*`requirements.txt`\*\*:
+In the same folder, create a file called **`requirements.txt`**:
 
 
 
@@ -70,29 +70,29 @@ flask
 
 
 
-\### 🐳 Step 3: Create a Dockerfile
+###🐳 Step 3: Create a Dockerfile
 
 
 
-Create a file named \*\*`Dockerfile`\*\* (no extension) in the same folder:
+Create a file named **`Dockerfile`** (no extension) in the same folder:
 
 
 
 ```dockerfile
 
-\# Use official Python image
+#Use official Python image
 
 FROM python:3.10-slim
 
 
 
-\# Set working directory
+#Set working directory
 
 WORKDIR /app
 
 
 
-\# Copy files into the container
+#Copy files into the container
 
 COPY requirements.txt .
 
@@ -104,15 +104,15 @@ COPY . .
 
 
 
-\# Expose port 5000
+#Expose port 5000
 
 EXPOSE 5000
 
 
 
-\# Run the app
+#Run the app
 
-CMD \["python", "app.py"]
+CMD ["python", "app.py"]
 
 ```
 
@@ -122,7 +122,7 @@ CMD \["python", "app.py"]
 
 
 
-\### 🏗️ Step 4: Build the Docker image
+###🏗️ Step 4: Build the Docker image
 
 
 
@@ -146,7 +146,7 @@ This tells Docker to build an image named `my-python-app` using the `Dockerfile`
 
 
 
-\### ▶️ Step 5: Run the container
+###▶️ Step 5: Run the container
 
 
 
@@ -162,7 +162,7 @@ docker run -d -p 5000:5000 my-python-app
 
 
 
-This maps \*\*port 5000\*\* on your computer to \*\*port 5000\*\* inside the container.
+This maps **port 5000** on your computer to **port 5000** inside the container.
 
 
 
@@ -170,19 +170,19 @@ This maps \*\*port 5000\*\* on your computer to \*\*port 5000\*\* inside the con
 
 
 
-\### 🌐 Step 6: Test your app
+###🌐 Step 6: Test your app
 
 
 
 Open your browser and visit:
 
-👉 \[http://localhost:5000](http://localhost:5000)
+👉 [http://localhost:5000](http://localhost:5000)
 
 
 
 You should see:
 
-\*\*“Hello from Dockerized Python App!”\*\*
+**“Hello from Dockerized Python App!”**
 
 
 
@@ -190,7 +190,7 @@ You should see:
 
 
 
-\### 🧹 Step 7: Stop and clean up (optional)
+###🧹 Step 7: Stop and clean up (optional)
 
 
 
@@ -200,9 +200,9 @@ To stop the container:
 
 ```bash
 
-docker ps        # find your container ID
+docker ps        #find your container ID
 
-docker stop <container\_id>
+docker stop <container_id>
 
 ```
 
@@ -214,23 +214,23 @@ To remove it:
 
 ```bash
 
-docker rm <container\_id>
+docker rm <container_id>
 
 ```
 
 
 
-\## 🐋 Step-by-step: Push Docker Image to Docker Hub
+##🐋 Step-by-step: Push Docker Image to Docker Hub
 
 
 
-\### \*\*Step 1: Create a Docker Hub account\*\*
+###**Step 1: Create a Docker Hub account**
 
 
 
-If you don’t have one yet, go to 👉 \[https://hub.docker.com](https://hub.docker.com)
+If you don’t have one yet, go to 👉 [https://hub.docker.com](https://hub.docker.com)
 
-Create an account and note your \*\*username\*\*.
+Create an account and note your **username**.
 
 
 
@@ -238,7 +238,7 @@ Create an account and note your \*\*username\*\*.
 
 
 
-\### \*\*Step 2: Log in from your terminal\*\*
+###**Step 2: Log in from your terminal**
 
 
 
@@ -254,7 +254,7 @@ docker login
 
 
 
-Then enter your Docker Hub \*\*username\*\* and \*\*password\*\* (or access token).
+Then enter your Docker Hub **username** and **password** (or access token).
 
 
 
@@ -274,7 +274,7 @@ Login Succeeded
 
 
 
-\### \*\*Step 3: Tag your image\*\*
+###**Step 3: Tag your image**
 
 
 
@@ -310,7 +310,7 @@ docker tag my-python-app johndoe/my-python-app:latest
 
 
 
-\### \*\*Step 4: Push your image\*\*
+###**Step 4: Push your image**
 
 
 
@@ -336,11 +336,11 @@ Docker will upload the layers, and once complete, you can see it at:
 
 
 
-\### \*\*Step 5: Pull and run it anywhere\*\*
+###**Step 5: Pull and run it anywhere**
 
 
 
-Now, on \*any\* machine with Docker, you can run:
+Now, on *any* machine with Docker, you can run:
 
 
 
@@ -356,7 +356,7 @@ docker run -d -p 5000:5000 johndoe/my-python-app
 
 Then visit:
 
-\[http://localhost:5000](http://localhost:5000)
+[http://localhost:5000](http://localhost:5000)
 
 🎉 Your app will run exactly as before — no setup required.
 
