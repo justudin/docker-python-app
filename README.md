@@ -29,13 +29,13 @@ app = Flask(__name__)
 
 def hello():
 
-&nbsp;   return "Hello from Dockerized Python App!"
+   return "Hello from Dockerized Python App!"
 
 
 
 if __name__ == '__main__':
 
-&nbsp;   app.run(host='0.0.0.0', port=5000)
+   app.run(host='0.0.0.0', port=5000)
 
 ```
 
