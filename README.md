@@ -81,8 +81,7 @@ Create a file named **`Dockerfile`** (no extension) in the same folder:
 
 #Use official Python image
 
-FROM python:3.10-slim
-
+FROM python:3
 
 
 #Set working directory
