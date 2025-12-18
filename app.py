@@ -8,4 +8,4 @@ def hello():
     return "Learning Hub is currently offline as this semester’s course has ended. See you in the next class—happy learning! 🎓✨"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5555)
+    app.run(host='0.0.0.0', port=5000)
